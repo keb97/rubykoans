@@ -14,9 +14,13 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  if (a==b)&&(b==c)
-  	:equilateral
-  elsif (a==b)||(b==c)||(a==c)
+  if ((a+b)<=c)||((a+c)<=b)||((c+b)<=a)
+  	raise TriangleError, "doesn't add up to a triangle!"
+  elsif (a<=0)||(b<=0)||(c<=0)
+  	raise TriangleError, "can't have zero or negative length sides!"
+  elsif (a==b)&&(b==c)  
+  	:equilateral 
+  elsif (a==b)||(b==c)||(a==c)  
   	:isosceles
   else
     :scalene
