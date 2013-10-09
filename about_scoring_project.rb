@@ -31,7 +31,6 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 def score(dice)
   dice.sort!
-  print dice
 
   if dice == []
     return 0
@@ -66,7 +65,6 @@ def score(dice)
       end
     end
 
-    print dice
 
     sum ||= 0
     if dice.length > 0
